@@ -1,19 +1,27 @@
 import ImgHolder from '@/components/ImgHolder';
+import LinkText from '@/components/LinkText';
 import { formatDate } from '@/utils/date';
-import Link from 'next/link';
+import { PortableText, PortableTextReactComponents } from 'next-sanity';
+
+const contentComponents: Partial<PortableTextReactComponents> = {
+  marks: {
+    link: ({ children, value }) => {
+      return <LinkText href={value.href}>{children}</LinkText>;
+    },
+  },
+  block: {
+    normal: ({ children }) => <p className="mb-3">{children}</p>,
+  },
+};
 
 // TODO: add article type
 export default async function Article({ ...article }) {
-  console.log({ content: article.content });
-
   return (
     <div>
-      <Link
-        href="/"
-        className="mb-3 mt-[-0.5rem] block text-blue-500 underline"
-      >
+      <LinkText href="/" className="mb-3 mt-[-0.5rem] block">
         {'< Back'}
-      </Link>
+      </LinkText>
+
       <ImgHolder
         src={article.image.url}
         alt={article.image.alt}
@@ -22,20 +30,23 @@ export default async function Article({ ...article }) {
         className="mb-6"
       />
 
-      <div className="flex flex-row items-start justify-between">
+      <div className="mb-6 flex flex-col items-start justify-between sm:flex-row md:mb-8">
         <div>
-          <h1 className="mb-3 text-3xl font-bold">{article.heading}</h1>
-          <h2 className="text-xl italic">{article.subheading}</h2>
+          <h1 className="mb-2 text-2xl font-bold md:mb-3 md:text-3xl">
+            {article.heading}
+          </h1>
+          <h2 className="text-lg italic md:text-xl">{article.subheading}</h2>
         </div>
-        <div className="ml-6 flex-shrink-0 text-right">
+
+        <div className="mt-6 flex-shrink-0 text-[0.9rem] sm:ml-6 sm:mt-0 sm:text-right">
           <p>
-            <span className="font-medium">created:</span>{' '}
+            <span className="font-medium text-gray-800">created:</span>{' '}
             <span className="text-gray-500">
               {formatDate(article._createdAt)}
             </span>
           </p>
           <p>
-            <span className="font-medium">updated:</span>{' '}
+            <span className="font-medium text-gray-800">updated:</span>{' '}
             <span className="text-gray-500">
               {formatDate(article._updatedAt)}
             </span>
@@ -43,7 +54,7 @@ export default async function Article({ ...article }) {
         </div>
       </div>
 
-      <div></div>
+      <PortableText value={article.content} components={contentComponents} />
     </div>
   );
 }

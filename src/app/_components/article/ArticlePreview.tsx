@@ -16,13 +16,13 @@ export default function ArticlePreview({ ...article }: any) {
             imgClassName="rounded"
           />
           <div>
-            <h1 className="mb-1 text-2xl font-bold">{article.heading}</h1>
-            <h2 className="text-xl italic">{article.subheading}</h2>
+            <h1 className="mb-1 text-xl md:text-2xl font-bold">{article.heading}</h1>
+            <h2 className="text-lg md:text-xl italic">{article.subheading}</h2>
           </div>
         </div>
         <Button
           href={`article/${article.slug}`}
-          className="ml-6 text-nowrap px-5 py-[0.6rem]"
+          className="ml-6 text-nowrap px-3 md:px-5 py-[0.6rem]"
         >
           Read Article
         </Button>
