@@ -1,12 +1,12 @@
 import { createClient, groq } from 'next-sanity';
 
-export async function getArticles() {
-  const client = createClient({
-    projectId: 'd2cqckcf',
-    dataset: 'production',
-    apiVersion: '2024-11-20',
-  });
+const client = createClient({
+  projectId: 'd2cqckcf',
+  dataset: 'production',
+  apiVersion: '2024-11-20',
+});
 
+export async function getArticlePreviews() {
   return client.fetch(
     groq`*[_type == "article"]{
       _id,
@@ -14,8 +14,27 @@ export async function getArticles() {
       heading,
       subheading,
       "slug": slug.current,
-      "image": image.asset->url,
-      content 
+      "image": {
+        "url": image.asset->url,
+        "alt": image.alt
+      }
     }`,
+  );
+}
+
+export async function getArticle(slug: string) {
+  return client.fetch(
+    groq`*[_type == "article" && slug.current == "${slug}"]{
+      _id,
+      _createdAt,
+      _updatedAt,
+      heading,
+      subheading,
+      "image": {
+        "url": image.asset->url,
+        "alt": image.alt
+      },
+      content 
+    }[0]`,
   );
 }

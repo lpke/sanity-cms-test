@@ -45,6 +45,7 @@ module.exports = {
     'no-console': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'no-underscore-dangle': 'off',
+    '@next/next/no-img-element': 'off',
     // downgrades from error to warn
     'prefer-const': 'warn',
     'spaced-comment': 'warn',
