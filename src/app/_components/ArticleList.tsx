@@ -6,8 +6,8 @@ export default async function ArticleList() {
   return (
     <div>
       {articles.map((article) => (
-        <div>
-          <div className="mb-6" key={article._id}>
+        <div key={article._id}>
+          <div className="mb-6">
             <h1 className="text-2xl font-bold">{article.heading}</h1>
             <h2 className="text-xl italic">{article.subheading}</h2>
           </div>
