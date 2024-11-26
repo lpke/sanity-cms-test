@@ -1,8 +1,9 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
+import { visionTool } from '@sanity/vision';
 
 const config = defineConfig({
-  // Get this from the dashboard
+  // Get this from the Sanity project dashboard
   projectId: 'd2cqckcf',
   dataset: 'production',
   title: 'sanity-cms-test',
@@ -11,7 +12,7 @@ const config = defineConfig({
   // URL where the Studio can be accessed from
   basePath: '/admin',
   // Define what core Studio tools should be available here
-  plugins: [structureTool()],
+  plugins: [structureTool(), visionTool()],
 });
 
 export default config;
