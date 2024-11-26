@@ -8,7 +8,7 @@ export async function getArticles() {
   });
 
   return client.fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "article"]{
       _id,
       _createdAt,
       heading,

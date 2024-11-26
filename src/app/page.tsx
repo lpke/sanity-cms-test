@@ -1,9 +1,9 @@
-import CmsItems from '@/components/CmsItems';
+import ArticleList from '@/components/ArticleList';
 
 export default function Home() {
   return (
-    <main>
-      <CmsItems />
+    <main className="p-8">
+      <ArticleList />
     </main>
   );
 }

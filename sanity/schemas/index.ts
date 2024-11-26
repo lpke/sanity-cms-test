@@ -1,4 +1,4 @@
-import article from 'sanity/schemas/article-schema';
+import article from '@/sanity/schemas/article-schema';
 
 const schemas = [article];
 

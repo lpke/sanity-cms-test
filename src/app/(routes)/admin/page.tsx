@@ -1,4 +1,4 @@
-import SanityStudio from '@/components/sanity-studio/SanityStudio';
+import SanityStudio from '@/components/SanityStudio';
 
 export default function AdminPage() {
   return <SanityStudio />;
