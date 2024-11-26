@@ -1,9 +1,10 @@
 type ImgHolderProps = {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width: string | number;
+  height: string | number;
   className?: string;
+  imgClassName?: string;
 };
 
 export default function ImgHolder({
@@ -12,16 +13,17 @@ export default function ImgHolder({
   width,
   height,
   className,
+  imgClassName,
 }: ImgHolderProps) {
   return (
     <div className={`bg-gray-100 ${className || ''}`}>
       <img
         src={src}
         alt={alt}
-        className="object-cover"
+        className={`object-cover ${imgClassName || ''}`}
         style={{
-          width: `${width}px`,
-          height: `${height}px`,
+          width: width,
+          height: height,
         }}
       />
     </div>

@@ -1,6 +1,5 @@
 import Button from '@/components/Button';
 import ImgHolder from '@/components/ImgHolder';
-import Image from 'next/image';
 
 // TODO: add article type
 export default function ArticlePreview({ ...article }: any) {
@@ -13,14 +12,20 @@ export default function ArticlePreview({ ...article }: any) {
             alt={article.image.alt}
             width={150}
             height={100}
-            className="mr-6"
+            className="mr-6 min-w-[150px] rounded"
+            imgClassName="rounded"
           />
           <div>
             <h1 className="mb-1 text-2xl font-bold">{article.heading}</h1>
             <h2 className="text-xl italic">{article.subheading}</h2>
           </div>
         </div>
-        <Button href={`article/${article.slug}`}>Read Article</Button>
+        <Button
+          href={`article/${article.slug}`}
+          className="ml-6 text-nowrap px-5 py-[0.6rem]"
+        >
+          Read Article
+        </Button>
       </div>
       <div className="mb-4 border" />
     </div>
