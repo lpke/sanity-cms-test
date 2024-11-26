@@ -6,7 +6,6 @@ export default async function ArticleList() {
 
   return (
     <>
-      {/* TODO: add article type */}
       {articles.map((article) => (
         <ArticlePreview key={article._id} {...article} />
       ))}

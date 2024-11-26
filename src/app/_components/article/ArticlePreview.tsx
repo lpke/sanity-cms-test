@@ -1,8 +1,8 @@
 import Button from '@/components/Button';
 import ImgHolder from '@/components/ImgHolder';
+import type { ArticlePreviewData } from '@/types/sanity/Article';
 
-// TODO: add article type
-export default function ArticlePreview({ ...article }: any) {
+export default function ArticlePreview({ ...article }: ArticlePreviewData) {
   return (
     <div>
       <div className="mb-4 flex flex-row items-center justify-between px-4">
@@ -16,13 +16,15 @@ export default function ArticlePreview({ ...article }: any) {
             imgClassName="rounded"
           />
           <div>
-            <h1 className="mb-1 text-xl md:text-2xl font-bold">{article.heading}</h1>
-            <h2 className="text-lg md:text-xl italic">{article.subheading}</h2>
+            <h1 className="mb-1 text-xl font-bold md:text-2xl">
+              {article.heading}
+            </h1>
+            <h2 className="text-lg italic md:text-xl">{article.subheading}</h2>
           </div>
         </div>
         <Button
           href={`article/${article.slug}`}
-          className="ml-6 text-nowrap px-3 md:px-5 py-[0.6rem]"
+          className="ml-6 text-nowrap px-3 py-[0.6rem] md:px-5"
         >
           Read Article
         </Button>

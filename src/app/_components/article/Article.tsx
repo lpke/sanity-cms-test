@@ -1,7 +1,8 @@
 import ImgHolder from '@/components/ImgHolder';
 import LinkText from '@/components/LinkText';
+import type { ArticleData } from '@/types/sanity/Article';
 import { formatDate } from '@/utils/date';
-import { PortableText, PortableTextReactComponents } from 'next-sanity';
+import { PortableText, type PortableTextReactComponents } from 'next-sanity';
 
 const contentComponents: Partial<PortableTextReactComponents> = {
   marks: {
@@ -14,8 +15,7 @@ const contentComponents: Partial<PortableTextReactComponents> = {
   },
 };
 
-// TODO: add article type
-export default async function Article({ ...article }) {
+export default async function Article({ ...article }: ArticleData) {
   return (
     <div>
       <LinkText href="/" className="mb-3 mt-[-0.5rem] block">
