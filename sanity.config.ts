@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
+import schemas from 'sanity/schemas';
 
 const config = defineConfig({
   // Get this from the Sanity project dashboard
@@ -13,6 +14,9 @@ const config = defineConfig({
   basePath: '/admin',
   // Define what core Studio tools should be available here
   plugins: [structureTool(), visionTool()],
+  schema: {
+    types: schemas,
+  },
 });
 
 export default config;
