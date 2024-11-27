@@ -1,6 +1,6 @@
 import Article from '@/components/article/Article';
 import NotFound from '@/not-found';
-import { getArticle } from 'src/sanity/utils';
+import { getArticle } from '@/sanity/utils';
 
 type ArticlePageProps = {
   params: Promise<{ slug: string[] }>;
