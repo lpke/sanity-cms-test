@@ -44,6 +44,6 @@
     ".next/types/**/*.ts",
     ".eslintrc.*",
     "prettier.config.*"
-  ],
+, "sanity-typegen.json"  ],
   "exclude": ["node_modules"]
 }

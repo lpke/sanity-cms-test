@@ -11,7 +11,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity-schema": "sanity schema extract --path './src/sanity/schema.generated.json'",
+    "sanity-typegen": "sanity typegen generate"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
