@@ -29,7 +29,7 @@
       "@/styles/*": ["./src/app/_styles/*"],
       "@/types/*": ["./src/app/_types/*"],
       "@/utils/*": ["./src/app/_utils/*"],
-      "@/sanity/*": ["./sanity/*"],
+      "@/sanity/*": ["./src/sanity/*"],
       "@/*": ["./src/app/*"]
     }
   },

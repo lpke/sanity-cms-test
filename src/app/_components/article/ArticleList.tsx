@@ -1,5 +1,5 @@
 import ArticlePreview from '@/components/article/ArticlePreview';
-import { getArticlePreviews } from '@/sanity/utils';
+import { getArticlePreviews } from 'src/sanity/utils';
 
 export default async function ArticleList() {
   const articles = await getArticlePreviews();

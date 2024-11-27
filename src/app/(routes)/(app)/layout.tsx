@@ -1,7 +1,7 @@
+import Providers from '@/Providers';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Providers from './Providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'NextJS Base',
-  description: 'NextJS base setup',
+  title: 'Sanity CMS Test',
+  description: 'Sanity with NextJS',
 };
 
 export default function RootLayout({
