@@ -1,5 +1,5 @@
 import Article from '@/components/article/Article';
-import NotFound from '@/not-found';
+import NotFound from '@/routes/(app)/not-found';
 import { getArticle } from '@/sanity/utils';
 
 type ArticlePageProps = {
