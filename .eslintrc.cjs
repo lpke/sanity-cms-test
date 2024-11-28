@@ -22,6 +22,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
+  ignorePatterns: ['*.generated.*'],
   // global eslint rules
   rules: {
     // disable rules (auto fixed on format)
