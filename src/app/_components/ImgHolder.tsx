@@ -1,6 +1,6 @@
 type ImgHolderProps = {
   src: string;
-  alt: string;
+  alt?: string;
   width: string | number;
   height: string | number;
   className?: string;

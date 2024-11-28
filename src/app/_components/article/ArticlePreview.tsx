@@ -1,15 +1,15 @@
 import Button from '@/components/Button';
 import ImgHolder from '@/components/ImgHolder';
-import type { ArticlePreviewData } from '@/types/sanity/Article';
+import type { ArticleData } from '@/sanity/types';
 
-export default function ArticlePreview({ ...article }: ArticlePreviewData) {
+export default function ArticlePreview({ ...article }: ArticleData) {
   return (
     <div>
       <div className="mb-4 flex flex-row items-center justify-between px-4">
         <div className="flex flex-row items-center">
           <ImgHolder
             src={article.image.url}
-            alt={article.image.alt}
+            alt={article.image?.alt}
             width={150}
             height={100}
             className="mr-6 min-w-[150px] rounded"

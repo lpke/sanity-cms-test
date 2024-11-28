@@ -1,6 +1,6 @@
 import ImgHolder from '@/components/ImgHolder';
 import LinkText from '@/components/LinkText';
-import type { ArticleData } from '@/types/sanity/Article';
+import type { ArticleData } from '@/sanity/types';
 import { formatDate } from '@/utils/date';
 import { PortableText, type PortableTextReactComponents } from 'next-sanity';
 
@@ -24,7 +24,7 @@ export default async function Article({ ...article }: ArticleData) {
 
       <ImgHolder
         src={article.image.url}
-        alt={article.image.alt}
+        alt={article.image?.alt}
         width="100%"
         height={300}
         className="mb-6"
@@ -54,7 +54,10 @@ export default async function Article({ ...article }: ArticleData) {
         </div>
       </div>
 
-      <PortableText value={article.content} components={contentComponents} />
+      <PortableText
+        value={article?.content || []}
+        components={contentComponents}
+      />
     </div>
   );
 }
