@@ -1,7 +1,7 @@
 {
   "name": "sanity-cms-test",
   "version": "1.0.0",
-  "description": "Testing Sanity CMS with NextJS",
+  "description": "Next.js + Sanity CMS Demo",
   "repository": "github:lpke/sanity-cms-test",
   "author": "Luke Perich <luke@lpdev.io> (https://lpdev.io)",
   "license": "UNLICENSED",
