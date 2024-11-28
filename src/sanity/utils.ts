@@ -1,4 +1,4 @@
-import type { Article } from '@/sanity/types.generated';
+import type { ArticleData } from '@/sanity/types';
 import { createClient, groq } from 'next-sanity';
 
 const client = createClient({
@@ -7,7 +7,7 @@ const client = createClient({
   apiVersion: '2024-11-20',
 });
 
-export async function getArticlePreviews(): Promise<Article[]> {
+export async function getArticlePreviews(): Promise<ArticleData[]> {
   return client.fetch(
     groq`*[_type == "article"]{
       _id,
@@ -22,7 +22,7 @@ export async function getArticlePreviews(): Promise<Article[]> {
   );
 }
 
-export async function getArticle(slug: string): Promise<Article> {
+export async function getArticle(slug: string): Promise<ArticleData> {
   return client.fetch(
     groq`*[_type == "article" && slug.current == "${slug}"]{
       _id,
